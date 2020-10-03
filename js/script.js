@@ -48,8 +48,7 @@
         "Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
         4) Потренироваться и переписать цикл еще двумя способами*/
     // Решение:
-
-    const askQueastion = string => prompt(string, '');
+    /* const askQueastion = string => prompt(string, '');
     const isValueValid = value => value !== '' && value !== null;
     const logAnswer = string => console.log(string);
     const showMessage = (string = 'Ответьте на вопрос') => alert(string);
@@ -145,5 +144,5 @@
 
     const personalMovieDB = createPersonalMovieDB();
 
-    console.log('personalMovieDB', personalMovieDB);
+    console.log('personalMovieDB', personalMovieDB); */
 }
