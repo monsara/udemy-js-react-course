@@ -75,7 +75,7 @@
             if (isValid) {
                 // logAnswer(numberOfFilms);
 
-                personalMovieDB.count = numberOfFilms;
+                personalMovieDB.count = Number(numberOfFilms);
 
                 if (personalMovieDB.count < 10) {
                     message = 'Просмотрено довольно мало фильмов';
