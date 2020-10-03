@@ -47,7 +47,7 @@
         "Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
         "Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
         4) Потренироваться и переписать цикл еще двумя способами*/
-    /* Решение:
+    // Решение:
 
     const askQueastion = string => prompt(string, '');
     const isValueValid = value => value !== '' && value !== null;
@@ -116,7 +116,7 @@
                             );
 
                             if (isValid) {
-                                logAnswer(ratingOflastWatchedMovie);
+                                // logAnswer(ratingOflastWatchedMovie);
 
                                 personalMovieDB.movies[
                                     lastWatchedMovie
@@ -139,9 +139,11 @@
 
             showMessage();
         } while (true);
+
+        return personalMovieDB;
     };
 
     const personalMovieDB = createPersonalMovieDB();
 
-    console.log(personalMovieDB); */
+    console.log('personalMovieDB', personalMovieDB);
 }
