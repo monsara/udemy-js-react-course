@@ -216,11 +216,11 @@
     // showMyDB(personalMovieDB.privat);
     // function writeYourGenres() {
     //     for (let i = 1; i <= 3; i++) {
-    //         const gener = prompt(`Ваш любимый жанр под номером ${i}`, '');
-    //         if (gener !== '' && gener !== null) {
-    //             personalMovieDB.genres.push(gener);
-    //             // personalMovieDB.genres = [...personalMovieDB.genres, gener];
-    //             // personalMovieDB.genres[i - 1] = gener;
+    //         const genre = prompt(`Ваш любимый жанр под номером ${i}`, '');
+    //         if (genre !== '' && genre !== null) {
+    //             personalMovieDB.genres.push(genre);
+    //             // personalMovieDB.genres = [...personalMovieDB.genres, genre];
+    //             // personalMovieDB.genres[i - 1] = genre;
     //             console.log('done');
     //         } else {
     //             console.log('error');
@@ -245,14 +245,14 @@
         при помощи метода forEach вывести в консоль сообщения в таком виде:
         "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"
     */
-    /*  
-        const personalMovieDB = {
+
+    const personalMovieDB = {
         count: 0,
         movies: {},
         actors: {},
         genres: [],
         privat: false,
-        
+
         start() {
             this.count = +prompt('Сколько фильмнов вы уже посмотрели?', '');
 
@@ -306,12 +306,15 @@
         },
         writeYourGenres() {
             for (let i = 1; i <= 3; i++) {
-                const gener = prompt(`Ваш любимый жанр под номером ${i}`, '');
+                const genre = prompt(
+                    `Ваш любимый жанр под номером ${i}`,
+                    '',
+                ).toLowerCase();
 
-                if (gener !== '' && gener !== null) {
-                    this.genres = [...this.genres, gener];
-                    // this.genres.push(gener);
-                    // this.genres[i - 1] = gener;
+                if (genre !== '' && genre !== null) {
+                    this.genres = [...this.genres, genre];
+                    // this.genres.push(genre);
+                    // this.genres[i - 1] = genre;
 
                     console.log('done');
                 } else {
@@ -320,20 +323,27 @@
                     i--;
                 }
             }
+
+            this.genres
+                .sort()
+                .forEach((genre, index) =>
+                    console.log(`Любимый жанр #${index + 1} - ${genre}`),
+                );
         },
         toggleVisibleMyDB() {
             this.privat = this.privat ? false : true;
         },
     };
 
-    personalMovieDB.start();
-    personalMovieDB.rememeberMyFilms();
-    personalMovieDB.detectPersonalLevel();
-    personalMovieDB.showMyDB();
+    // personalMovieDB.start();
+    // personalMovieDB.rememeberMyFilms();
+    // personalMovieDB.detectPersonalLevel();
+    // personalMovieDB.showMyDB();
     personalMovieDB.writeYourGenres();
     personalMovieDB.toggleVisibleMyDB();
 
-    console.log(personalMovieDB); */
+    console.log(personalMovieDB);
+
     /* 
     Решение с помощью функции конструктора
     const PersonalMovieDB = function () {
@@ -389,12 +399,12 @@
     };
     this.writeYourGenres = function () {
         for (let i = 1; i <= 3; i++) {
-            const gener = prompt(`Ваш любимый жанр под номером ${i}`, '');
+            const genre = prompt(`Ваш любимый жанр под номером ${i}`, '');
 
-            if (gener !== '' && gener !== null) {
-                this.genres = [...this.genres, gener];
-                // this.genres.push(gener);
-                // this.genres[i - 1] = gener;
+            if (genre !== '' && genre !== null) {
+                this.genres = [...this.genres, genre];
+                // this.genres.push(genre);
+                // this.genres[i - 1] = genre;
 
                 console.log('done');
             } else {
